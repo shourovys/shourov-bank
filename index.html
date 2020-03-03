@@ -43,7 +43,7 @@
                 <div class="col-md-4 ">
                     <div class="balance">
                         <h5>Balance</h5>
-                        <h2>$ <samp id="currertBalance">1240</samp></h2>
+                        <h2>$ <samp id="currertTotalBalance">1240</samp></h2>
 
                     </div>
                 </div>
@@ -111,15 +111,10 @@
 
 
 
-            const currertBalance = document.getElementById("currertBalance").innerText;
+            const currertBalance = document.getElementById("currertTotalBalance").innerText;
             currentAmount = parseFloat(currertBalance)
 
-            document.getElementById("currertBalance").innerText = currentAmount + depositNumber
-
-
-
-
-
+            document.getElementById("currertTotalBalance").innerText = currentAmount + depositNumber
 
 
         })
@@ -128,6 +123,22 @@
         // ------------------------window-btn event--------------------
 
         document.getElementById("withdraw-btn").addEventListener("click", function() {
+            const withdrawAmount = document.getElementById("withdraw-amount").value;
+            const withdrawIN = parseFloat(withdrawAmount)
+
+            const currentWithdrawBalance = document.getElementById("currentWithdraw").innerText;
+            const currertTotalBalanceNUM = parseFloat(currentWithdrawBalance)
+
+
+            document.getElementById("currentWithdraw").innerText = withdrawIN + currertTotalBalanceNUM;
+
+            document.getElementById("withdraw-amount").value = "";
+
+
+            const currertBalance = document.getElementById("currertTotalBalance").innerText;
+            currentAmount = parseFloat(currertBalance)
+
+            document.getElementById("currertTotalBalance").innerText = currentAmount - withdrawIN;
 
         })
     </script>
