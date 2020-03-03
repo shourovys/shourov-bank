@@ -1,37 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Shourov Bank</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="login-area">
-      <h1 class="text-center">Wellcome to Shourov Bank</h1>
-      <div class="subimt-area">
-          <h4>Log In</h6>
-          <input type="text" class="form-control" name="" id="" placeholder="Email">
-          <br>
-          <input type="password" class="form-control" name="" id="" placeholder="Password"> 
-          <br>
-          <button id="change" class="btn btn-success">Enter</button>
-          <br>
-      </div>
+        <h1 class="text-center">Wellcome to Shourov Bank</h1>
+        <div class="subimt-area">
+            <h4>Log In</h6>
+                <input type="text" class="form-control" name="" id="" placeholder="Email">
+                <br>
+                <input type="password" class="form-control" name="" id="" placeholder="Password">
+                <br>
+                <button id="change" class="btn btn-success">Enter</button>
+                <br>
+        </div>
     </div>
-    <div id="transtion">
-      
+    <div class="container">
+        <div id="transtion">
+            <div class="row text-center">
+                <div class="col-md-4 ">
+                    <div class="deposit">
+                        <h5>Deposit</h5>
+                        <h2>$ <samp id="currentDeposit">00</samp></h2>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="withdraw">
+                        <h5>Withdraw</h5>
+                        <h2>$ <samp id="currentWithdraw">00</samp></h2>
+
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="balance">
+                        <h5>Balance</h5>
+                        <h2>$ <samp id="currertBalance">1240</samp></h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box-deposit">
+                        <h5>Deposit</h5>
+                        <input type="text" class="form-control" placeholder="Amount you went to Deposit" name="" id="deposit-amount">
+                        <br>
+                        <button id="deposit-btn" class="btn btn-success">Deposit</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box-withdraw">
+                        <h5>Withdraw</h5>
+                        <input type="text" class="form-control" placeholder="Amount you went to Withdraw" name="" id="withdraw-amount">
+                        <br>
+                        <button id="withdraw-btn" class="btn btn-success">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div id="transtion" class="container">
 
+    </div>
 
 
 
@@ -49,17 +89,52 @@
 
 
     <script>
-      document.getElementById("change").addEventListener("click", function(){
-        document.getElementById("login-area").style.display = "none";
-        document.getElementById("transtion").style.display = "block";
-        
-      })
-  
-  
-      </script>
+        // ----------------------log in btn event handaler-------------
+        document.getElementById("change").addEventListener("click", function() {
+                document.getElementById("login-area").style.display = "none";
+                document.getElementById("transtion").style.display = "block";
+
+            })
+            // --------------------deposit-btn event------------------
+
+        document.getElementById("deposit-btn").addEventListener("click", function() {
+            const depositAmount = document.getElementById("deposit-amount").value;
+            const depositNumber = parseFloat(depositAmount);
+
+            const currentDeposit = document.getElementById("currentDeposit").innerText;
+            const currentBalance = parseFloat(currentDeposit);
+
+            const totalDeposit = depositNumber + currentBalance;
+            document.getElementById("currentDeposit").innerText = totalDeposit;
+
+            document.getElementById("deposit-amount").value = "";
 
 
 
-    
-  </body>
+            const currertBalance = document.getElementById("currertBalance").innerText;
+            currentAmount = parseFloat(currertBalance)
+
+            document.getElementById("currertBalance").innerText = currentAmount + depositNumber
+
+
+
+
+
+
+
+        })
+
+
+        // ------------------------window-btn event--------------------
+
+        document.getElementById("withdraw-btn").addEventListener("click", function() {
+
+        })
+    </script>
+
+
+
+
+</body>
+
 </html>

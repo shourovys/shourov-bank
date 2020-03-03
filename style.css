@@ -1,14 +1,53 @@
-body{
+body {
     padding: 100px;
 }
 
-.subimt-area{
+.subimt-area {
     margin-top: 50px;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 5px 5px 10px gray;
 }
 
-#transtion{
+
+/* ---------------------------------for 2nd page-------------------------- */
+
+#transtion {
     display: none;
+}
+
+.deposit,
+.withdraw,
+.balance {
+    height: 150px;
+    padding: 27px 1px;
+    margin: 5px 20px;
+    border-radius: 12px;
+    color: aliceblue;
+    font-size: 1.5rem;
+}
+
+.deposit {
+    background-color: slateblue;
+}
+
+.withdraw {
+    background-color: lightsalmon;
+}
+
+.balance {
+    background-color: orange;
+}
+
+.box-deposit,
+.box-withdraw {
+    height: 270px;
+    border-radius: 12px;
+    padding: 35px 30px;
+    margin: 30px 25px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.btn {
+    margin-top: 15px;
 }
