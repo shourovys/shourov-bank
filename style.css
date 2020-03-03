@@ -8,3 +8,7 @@ body{
     border-radius: 12px;
     box-shadow: 5px 5px 10px gray;
 }
+
+#transtion{
+    display: none;
+}
